@@ -9,8 +9,9 @@ namespace AbstractUniversity
     public class Study
     {
         public int Id{ get; set; }
-        public String Name { get; set; }
-        public String Orientation { get; set; }
+        public string Name { get; set; }
+        public string Orientation { get; set; }
         public int TeacherId { get; set; }
+        public virtual List<Course> Courses { get; set; }
     }
 }

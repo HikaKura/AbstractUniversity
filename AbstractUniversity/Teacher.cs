@@ -9,11 +9,13 @@ namespace AbstractUniversity
     public class Teacher
     {
         public int Id { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public String MiddleName { get; set; }
-        public String Mail { get; set; }
-        public String Password { get; set; }
-        public String Department { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        public string Mail { get; set; }
+        public string Password { get; set; }
+        public string Department { get; set; }
+        public virtual List<Study> Studies { get; set; }
+        public virtual List<Request> Requests { get; set; }
     }
 }

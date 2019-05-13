@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversity
 {
-    public class Request
+    public class ClassroomCourse
     {
         public int Id { get; set; }
-        public int TeacherId { get; set; }
+        public int ClassroomId { get; set; }
         public int CourseId { get; set; }
-        public virtual Teacher Teacher { get; set; }
+        public virtual Classroom Classroom { get; set; }
         public virtual Course Course { get; set; }
     }
 }
