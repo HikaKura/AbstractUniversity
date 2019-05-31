@@ -12,5 +12,6 @@ namespace AbstractUniversityDAL.BindingModel
         public string Name { get; set; }
         public string Orientation { get; set; }
         public int TeacherId { get; set; }
+        public List<CourseBindingModel> Courses { get; set; }
     }
 }

@@ -15,6 +15,6 @@ namespace AbstractUniversityDAL.BindingModel
         public string Mail { get; set; }
         public string Password { get; set; }
         public string Department { get; set; }
-        public virtual List<RequestBindingModel> Requests { get; set; }
+        public List<RequestBindingModel> Requests { get; set; }
     }
 }

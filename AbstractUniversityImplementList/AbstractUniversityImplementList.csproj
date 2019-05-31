@@ -44,6 +44,7 @@
     <Compile Include="DataListSingleton.cs" />
     <Compile Include="Implementations\ClassromServiceList.cs" />
     <Compile Include="Implementations\RequestServiceList.cs" />
+    <Compile Include="Implementations\StudyServiceList.cs" />
     <Compile Include="Implementations\TeacherServiceList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,5 +15,6 @@ namespace AbstractUniversityDAL.ViewModel
         [DisplayName("Направление обучения")]
         public string Orientation { get; set; }
         public int TeacherId { get; set; }
+        public List<CourseViewModel> Course { get; set; }
     }
 }

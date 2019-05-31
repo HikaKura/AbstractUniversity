@@ -73,7 +73,7 @@ namespace AbstractUniversityImplementList.Implementations
                 Id = maxId + 1,
                 Number = model.Number,
                 Status = element.Status,
-                Pavilion = element.Pavilion,
+                Pavilion = element.Pavilion
             });
             // курсы для аудитории
             int maxPCId = source.ClassroomCourses.Count > 0 ? source.ClassroomCourses.Max(rec => rec.Id) : 0;
