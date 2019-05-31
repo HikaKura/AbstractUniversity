@@ -42,11 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataListSingleton.cs" />
-    <Compile Include="Implementations\ClassromServiceList.cs" />
-    <Compile Include="Implementations\CourseServiceList.cs" />
-    <Compile Include="Implementations\RequestServiceList.cs" />
-    <Compile Include="Implementations\StudyServiceList.cs" />
-    <Compile Include="Implementations\TeacherServiceList.cs" />
+    <Compile Include="Implementations\ClassromServiceDB.cs" />
+    <Compile Include="Implementations\CourseServiceDB.cs" />
+    <Compile Include="Implementations\RequestServiceDB.cs" />
+    <Compile Include="Implementations\StudyServiceDB.cs" />
+    <Compile Include="Implementations\TeacherServiceDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversityImplementList.Implementations
 {
-    public class CourseServiceList : ICourseService
+    public class CourseServiceDB : ICourseService
     {
         private DataListSingleton source;
 

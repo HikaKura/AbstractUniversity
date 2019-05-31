@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversityImplementList.Implementations
 {
-    public class StudyServiceList
+    public class StudyServiceDB
     {
         private DataListSingleton source;
-        public StudyServiceList()
+        public StudyServiceDB()
         {
             source = DataListSingleton.GetInstance();
         }

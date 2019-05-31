@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversityImplementList.Implementations
 {
-    public class TeacherServiceList : ITeacherService
+    public class TeacherServiceDB : ITeacherService
     {
         private DataListSingleton source;
 
-        public TeacherServiceList()
+        public TeacherServiceDB()
         {
             source = DataListSingleton.GetInstance();
         }
