@@ -57,11 +57,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\ClassromServiceDB.cs" />
-    <Compile Include="Implementations\CourseServiceDB.cs" />
-    <Compile Include="Implementations\RequestServiceDB.cs" />
-    <Compile Include="Implementations\StudyServiceDB.cs" />
-    <Compile Include="Implementations\TeacherServiceDB.cs" />
+    <Compile Include="Migrations\201905312006114_secondMigration.cs" />
+    <Compile Include="Migrations\201905312006114_secondMigration.Designer.cs">
+      <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
   </ItemGroup>
@@ -78,6 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905312006114_secondMigration.resx">
+      <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

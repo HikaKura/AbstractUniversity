@@ -13,9 +13,9 @@ namespace AbstractUniversity
         public int Id{ get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
         public string Orientation { get; set; }
         public int TeacherId { get; set; }
+        public virtual Teacher Teacher { get; set; }
         [ForeignKey("StudyId")]
         public virtual List<Course> Courses { get; set; }
     }

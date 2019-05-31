@@ -17,9 +17,7 @@ namespace AbstractUniversity
         public DateTime StartCourse { get; set; }
         [Required]
         public DateTime EndCourse { get; set; }
-        [Required]
         public string Content { get; set; }
-        [Required]
         public int Student_Count { get; set; }
         public int StudyId { get; set; }
         [ForeignKey("CourseId")]

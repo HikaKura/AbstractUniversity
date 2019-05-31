@@ -24,5 +24,6 @@ namespace AbstractUniversityDAL.ViewModel
         [DisplayName("Кафедра преподавателя")]
         public string Department { get; set; }
         public virtual List<RequestViewModel> Requests { get; set; }
+        public virtual List<StudyViewModel> Studies { get; set; }
     }
 }

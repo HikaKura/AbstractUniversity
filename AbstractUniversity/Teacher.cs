@@ -21,7 +21,6 @@ namespace AbstractUniversity
         public string Mail { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
         public string Department { get; set; }
         [ForeignKey("TeacherId")]
         public virtual List<Study> Studies { get; set; }
