@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversityDAL.Interface
 {
-    public interface IMainService
+    public interface IStudyService
     {
-        List<CourseViewModel> GetList();
-        void NotBeginCourse(CourseBindingModel model);
-        void CourseGoing(CourseBindingModel model);
-        void CourseFinished(CourseBindingModel model);
+        List<StudyViewModel> GetList();
+        StudyViewModel GetElement(int id);
+        void AddElement(StudyBindingModel model);
+        void UpdElement(StudyBindingModel model);
+        void DelElement(int id);
     }
 }
