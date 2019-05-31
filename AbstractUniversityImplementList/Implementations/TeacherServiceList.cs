@@ -54,7 +54,7 @@ namespace AbstractUniversityImplementList.Implementations
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.FirstName == model.FirstName);
             if (element != null)
             {
-                throw new Exception("Уже есть клиент с таким ФИО");
+                throw new Exception("Уже есть преподаватель с таким ФИО");
             }
             int maxId = source.Teachers.Count > 0 ? source.Teachers.Max(rec => rec.Id) : 0;
             source.Teachers.Add(new Teacher
@@ -73,7 +73,7 @@ namespace AbstractUniversityImplementList.Implementations
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.FirstName == model.FirstName && rec.Id != model.Id);
             if (element != null)
             {
-                throw new Exception("Уже есть клиент с таким ФИО");
+                throw new Exception("Уже есть преподаватель с таким ФИО");
             }
             element = source.Teachers.FirstOrDefault(rec => rec.Id == model.Id);
             if (element == null)
