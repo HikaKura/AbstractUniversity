@@ -59,10 +59,19 @@
   <ItemGroup>
     <Compile Include="Implementation\ClassroomServiceDB.cs" />
     <Compile Include="Implementation\CourseServiceDB.cs" />
+    <Compile Include="Implementation\MainServiceDB.cs" />
     <Compile Include="Implementation\TeacherServiceDB.cs" />
     <Compile Include="Migrations\201905312006114_secondMigration.cs" />
     <Compile Include="Migrations\201905312006114_secondMigration.Designer.cs">
       <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905312258540_newtMigration.cs" />
+    <Compile Include="Migrations\201905312258540_newtMigration.Designer.cs">
+      <DependentUpon>201905312258540_newtMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905312323020_datetime.cs" />
+    <Compile Include="Migrations\201905312323020_datetime.Designer.cs">
+      <DependentUpon>201905312323020_datetime.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +94,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905312006114_secondMigration.resx">
       <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905312258540_newtMigration.resx">
+      <DependentUpon>201905312258540_newtMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905312323020_datetime.resx">
+      <DependentUpon>201905312323020_datetime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

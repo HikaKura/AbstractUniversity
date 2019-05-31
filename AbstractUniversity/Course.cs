@@ -20,6 +20,7 @@ namespace AbstractUniversity
         public string Content { get; set; }
         public int Student_Count { get; set; }
         public int StudyId { get; set; }
+        public CourseStatus Status { get; set; }
         [ForeignKey("CourseId")]
         public virtual List<ClassroomCourse> ClassroomCourses { get; set; }
         [ForeignKey("CourseId")]

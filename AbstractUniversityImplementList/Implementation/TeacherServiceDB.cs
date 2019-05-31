@@ -4,6 +4,7 @@ using AbstractUniversityDAL.Interface;
 using AbstractUniversityDAL.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 
 namespace AbstractUniversityImplementList.Implementation
@@ -126,8 +127,8 @@ namespace AbstractUniversityImplementList.Implementation
                             Id = r.Id,
                             Name = r.Name,
                             Content = r.Content,
-                            StartCourse = r.StartCourse,
-                            EndCourse = r.EndCourse,
+                            StartCourse = SqlFunctions.DateName("dd", r.StartCourse) + " " + SqlFunctions.DateName("mm", r.StartCourse) + " " + SqlFunctions.DateName("yyyy", r.StartCourse),
+                            EndCourse = r.EndCourse == null ? "" : SqlFunctions.DateName("dd", r.EndCourse) + " " + SqlFunctions.DateName("mm", r.EndCourse) + " " + SqlFunctions.DateName("yyyy", r.EndCourse),
                             Student_Count = r.Student_Count,
                             StudyId = r.StudyId
                         }).ToList(),
@@ -165,8 +166,8 @@ namespace AbstractUniversityImplementList.Implementation
                         Id = r.Id,
                         Name = r.Name,
                         Content = r.Content,
-                        StartCourse = r.StartCourse,
-                        EndCourse = r.EndCourse,
+                        StartCourse = SqlFunctions.DateName("dd", r.StartCourse) + " " + SqlFunctions.DateName("mm", r.StartCourse) + " " + SqlFunctions.DateName("yyyy", r.StartCourse),
+                        EndCourse = r.EndCourse == null ? "" : SqlFunctions.DateName("dd", r.EndCourse) + " " + SqlFunctions.DateName("mm", r.EndCourse) + " " + SqlFunctions.DateName("yyyy", r.EndCourse),
                         Student_Count = r.Student_Count,
                         StudyId = r.StudyId
                     }).ToList(),
