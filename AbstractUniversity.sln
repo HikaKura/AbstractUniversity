@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversity", "Abstr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversityDAL", "AbstractUniversityDAL\AbstractUniversityDAL.csproj", "{7387B776-4082-494D-A241-CBFB6628EBB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversityImplementList", "AbstractUniversityImplementList\AbstractUniversityImplementList.csproj", "{48F985B4-3A67-46BB-8565-CD50AA211D1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversityImplemenDataBase", "AbstractUniversityImplementList\AbstractUniversityImplemenDataBase.csproj", "{48F985B4-3A67-46BB-8565-CD50AA211D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
