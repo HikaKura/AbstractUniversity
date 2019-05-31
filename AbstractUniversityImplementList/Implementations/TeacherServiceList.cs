@@ -13,10 +13,12 @@ namespace AbstractUniversityImplementList.Implementations
     public class TeacherServiceList : ITeacherService
     {
         private DataListSingleton source;
+
         public TeacherServiceList()
         {
             source = DataListSingleton.GetInstance();
         }
+
         public List<TeacherViewModel> GetList()
         {
             List<TeacherViewModel> result = source.Teachers.Select(rec => new TeacherViewModel
@@ -31,6 +33,7 @@ namespace AbstractUniversityImplementList.Implementations
             }).ToList();
             return result;
         }
+
         public TeacherViewModel GetElement(int id)
         {
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.Id == id);
@@ -49,6 +52,7 @@ namespace AbstractUniversityImplementList.Implementations
             }
             throw new Exception("Элемент не найден");
         }
+
         public void AddElement(TeacherBindingModel model)
         {
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.FirstName == model.FirstName);
@@ -62,12 +66,13 @@ namespace AbstractUniversityImplementList.Implementations
                 Id = maxId + 1,
                 FirstName = model.FirstName,
                 MiddleName = model.MiddleName,
-                LastName =  model.LastName,
+                LastName = model.LastName,
                 Mail = model.Mail,
                 Password = model.Password,
                 Department = model.Department
             });
         }
+
         public void UpdElement(TeacherBindingModel model)
         {
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.FirstName == model.FirstName && rec.Id != model.Id);
@@ -87,6 +92,7 @@ namespace AbstractUniversityImplementList.Implementations
             element.Password = model.Password;
             element.Department = model.Department;
         }
+
         public void DelElement(int id)
         {
             Teacher element = source.Teachers.FirstOrDefault(rec => rec.Id == id);
