@@ -17,7 +17,7 @@ namespace AbstractUniversityImplementList
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Classroom> Classrooms { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<ClassroomCourse> GetClassroomCourses { get; set; }
+        public virtual DbSet<ClassroomCourse> ClassroomCourses { get; set; }
         public virtual DbSet<Request> Requests { get; set; }
         public virtual DbSet<Study> Studies { get; set; }
 

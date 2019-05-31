@@ -57,6 +57,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\ClassroomServiceDB.cs" />
+    <Compile Include="Implementation\CourseServiceDB.cs" />
     <Compile Include="Implementation\TeacherServiceDB.cs" />
     <Compile Include="Migrations\201905312006114_secondMigration.cs" />
     <Compile Include="Migrations\201905312006114_secondMigration.Designer.cs">
