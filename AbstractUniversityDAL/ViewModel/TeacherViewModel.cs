@@ -23,7 +23,7 @@ namespace AbstractUniversityDAL.ViewModel
         public string Password { get; set; }
         [DisplayName("Кафедра преподавателя")]
         public string Department { get; set; }
-        public virtual List<RequestViewModel> Requests { get; set; }
-        public virtual List<StudyViewModel> Studies { get; set; }
+        public List<RequestViewModel> Requests { get; set; }
+        public List<StudyViewModel> Studies { get; set; }
     }
 }
