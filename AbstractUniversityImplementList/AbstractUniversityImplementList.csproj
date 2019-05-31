@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DataListSingleton.cs" />
     <Compile Include="Implementations\ClassromServiceList.cs" />
+    <Compile Include="Implementations\TeacherServiceList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
