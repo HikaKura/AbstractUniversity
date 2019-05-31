@@ -20,15 +20,11 @@ namespace AbstractUniversityImplementList.Implementations
 
         public List<ClassroomViewModel> GetList()
         {
-            List<ClassroomViewModel> result = new List<ClassroomViewModel>();
-            for (int i = 0; i < source.Classrooms.Count; ++i)
+            List<ClassroomViewModel> result = source.Classrooms.Select(rec => new ClassroomViewModel
             {
-                result.Add(new ClassroomViewModel
-                {
-                    Id = source.Classrooms[i].Id,
-                    ClientFIO = source.Clients[i].ClientFIO
-                });
-            }
+                Id = rec.Id,
+                Number = rec.Number,
+            }).ToList();
             return result;
         }
 
