@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AbstractUniversityImplementList.Implementation
 {
-    class StudyServiceDB : IStudyService
+    public class StudyServiceDB : IStudyService
     {
         private UniversityDbContext context;
 

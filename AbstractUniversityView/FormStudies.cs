@@ -13,19 +13,19 @@ using Unity;
 
 namespace AbstractUniversityView
 {
-    public partial class FormTeachers : Form
+    public partial class FormStudies : Form
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        private readonly ITeacherService service;
+        private readonly IStudyService service;
 
-        public FormTeachers(ITeacherService service)
+        public FormStudies(IStudyService service)
         {
             InitializeComponent();
-            this.service = service; 
+            this.service = service;
         }
 
-        private void FormTeachers_Load(object sender, EventArgs e)
+        private void FormStudies_Load(object sender, EventArgs e)
         {
             LoadData();
         }
@@ -34,7 +34,7 @@ namespace AbstractUniversityView
         {
             try
             {
-                List<TeacherViewModel> list = service.GetList();
+                List<StudyViewModel> list = service.GetList();
                 if (list != null)
                 {
                     dataGridView.DataSource = list;
@@ -52,7 +52,7 @@ namespace AbstractUniversityView
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormTeacher>();
+            var form = Container.Resolve<FormStudy>();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
@@ -85,7 +85,7 @@ namespace AbstractUniversityView
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
-                var form = Container.Resolve<FormTeacher>();
+                var form = Container.Resolve<FormStudy>();
                 form.Id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 if (form.ShowDialog() == DialogResult.OK)
                 {

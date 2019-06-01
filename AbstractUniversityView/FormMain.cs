@@ -60,7 +60,9 @@ namespace AbstractUniversityView
 
         private void обучениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormStudies>();
+            form.ShowDialog();
+            LoadData();
         }
 
         private void курсыToolStripMenuItem_Click(object sender, EventArgs e)
