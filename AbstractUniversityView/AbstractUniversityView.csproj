@@ -68,8 +68,26 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacher.Designer.cs">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeachers.Designer.cs">
+      <DependentUpon>FormTeachers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacher.resx">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,6 +110,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractUniversityDAL\AbstractUniversityDAL.csproj">
+      <Project>{7387b776-4082-494d-a241-cbfb6628ebb6}</Project>
+      <Name>AbstractUniversityDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbstractUniversityImplementList\AbstractUniversityImplemenDataBase.csproj">
+      <Project>{48f985b4-3a67-46bb-8565-cd50aa211d1f}</Project>
+      <Name>AbstractUniversityImplemenDataBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
