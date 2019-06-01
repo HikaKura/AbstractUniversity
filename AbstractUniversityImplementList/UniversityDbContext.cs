@@ -25,5 +25,7 @@ namespace AbstractUniversityImplementList
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
+
+        public System.Data.Entity.DbSet<AbstractUniversityDAL.BindingModel.StudyBindingModel> StudyBindingModels { get; set; }
     }
 }

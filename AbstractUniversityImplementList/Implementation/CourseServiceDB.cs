@@ -37,10 +37,11 @@ namespace AbstractUniversityImplementList.Implementation
 
         public CourseViewModel GetElement(int id)
         {
-            Course element = context.Courses.FirstOrDefault(rec => rec.Id == id);
-            if (element != null)
-            {
-                return new CourseViewModel
+            Course element;
+            CourseViewModel course;
+            using (var transaction = context.Database.BeginTransaction(){
+                element = context.Courses.Where(rec => rec.Id == id).FirstOrDefault();
+                course = new CourseViewModel
                 {
                     Id = element.Id,
                     Name = element.Name,
@@ -51,7 +52,7 @@ namespace AbstractUniversityImplementList.Implementation
                     StudyId = element.StudyId
                 };
             }
-            throw new Exception("Курс не найден");
+            return course;
         }
 
         public void AddElement(CourseBindingModel model)
@@ -68,8 +69,8 @@ namespace AbstractUniversityImplementList.Implementation
                     context.Courses.Add(new Course
                     {
                         Name = model.Name,
-                        //StartCourse = model.,
-                       // EndCourse = model.EndCourse,
+                        StartCourse = DateTime.Parse(model.StartCourse),
+                        EndCourse = DateTime.Parse(model.EndCourse),
                         Content = model.Content,
                         Student_Count = model.Student_Count,
                         StudyId = model.StudyId
@@ -102,8 +103,8 @@ namespace AbstractUniversityImplementList.Implementation
                         throw new Exception("Элемент не найден");
                     }
                     element.Name = model.Name;
-                   // element.StartCourse = model.StartCourse;
-                   // element.EndCourse = model.EndCourse;
+                    element.StartCourse = DateTime.Parse(model.StartCourse);
+                    element.EndCourse = DateTime.Parse(model.EndCourse);
                     element.Content = model.Content;
                     element.Student_Count = model.Student_Count;
                     element.StudyId = model.StudyId;

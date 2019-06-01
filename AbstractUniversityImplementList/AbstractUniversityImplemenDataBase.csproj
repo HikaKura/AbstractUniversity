@@ -74,9 +74,13 @@
     <Compile Include="Migrations\201905312323020_datetime.Designer.cs">
       <DependentUpon>201905312323020_datetime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906010017083_adddate.cs" />
-    <Compile Include="Migrations\201906010017083_adddate.Designer.cs">
-      <DependentUpon>201906010017083_adddate.cs</DependentUpon>
+    <Compile Include="Migrations\201906010036569_Web.cs" />
+    <Compile Include="Migrations\201906010036569_Web.Designer.cs">
+      <DependentUpon>201906010036569_Web.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906010110432_UpdCourseMigration.cs" />
+    <Compile Include="Migrations\201906010110432_UpdCourseMigration.Designer.cs">
+      <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,8 +110,11 @@
     <EmbeddedResource Include="Migrations\201905312323020_datetime.resx">
       <DependentUpon>201905312323020_datetime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906010017083_adddate.resx">
-      <DependentUpon>201906010017083_adddate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906010036569_Web.resx">
+      <DependentUpon>201906010036569_Web.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906010110432_UpdCourseMigration.resx">
+      <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
