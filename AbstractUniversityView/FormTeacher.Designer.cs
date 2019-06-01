@@ -40,6 +40,8 @@
             this.textBoxMail = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxpass = new System.Windows.Forms.TextBox();
+            this.labelpass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelLastName
@@ -124,7 +126,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(36, 180);
+            this.buttonSave.Location = new System.Drawing.Point(36, 231);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(131, 36);
             this.buttonSave.TabIndex = 10;
@@ -134,7 +136,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(186, 180);
+            this.buttonCancel.Location = new System.Drawing.Point(186, 231);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(131, 36);
             this.buttonCancel.TabIndex = 11;
@@ -142,11 +144,29 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // textBoxpass
+            // 
+            this.textBoxpass.Location = new System.Drawing.Point(75, 183);
+            this.textBoxpass.Name = "textBoxpass";
+            this.textBoxpass.Size = new System.Drawing.Size(242, 20);
+            this.textBoxpass.TabIndex = 13;
+            // 
+            // labelpass
+            // 
+            this.labelpass.AutoSize = true;
+            this.labelpass.Location = new System.Drawing.Point(25, 186);
+            this.labelpass.Name = "labelpass";
+            this.labelpass.Size = new System.Drawing.Size(48, 13);
+            this.labelpass.TabIndex = 12;
+            this.labelpass.Text = "Пароль:";
+            // 
             // FormTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 221);
+            this.ClientSize = new System.Drawing.Size(348, 279);
+            this.Controls.Add(this.textBoxpass);
+            this.Controls.Add(this.labelpass);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxMail);
@@ -161,6 +181,7 @@
             this.Controls.Add(this.labelLastName);
             this.Name = "FormTeacher";
             this.Text = "Изменение данных о преподавателе";
+            this.Load += new System.EventHandler(this.FormTeacher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +201,7 @@
         private System.Windows.Forms.TextBox textBoxMail;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.TextBox textBoxpass;
+        private System.Windows.Forms.Label labelpass;
     }
 }
