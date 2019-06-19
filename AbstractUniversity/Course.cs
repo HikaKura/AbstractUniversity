@@ -16,7 +16,7 @@ namespace AbstractUniversity
         [Required]
         public DateTime StartCourse { get; set; }
         [Required]
-        public DateTime EndCourse { get; set; }
+        public DateTime? EndCourse { get; set; }
         public string Content { get; set; }
         public int Student_Count { get; set; }
         public int StudyId { get; set; }

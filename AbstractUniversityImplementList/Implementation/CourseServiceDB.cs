@@ -70,8 +70,8 @@ namespace AbstractUniversityImplementList.Implementation
                     context.Courses.Add(new Course
                     {
                         Name = model.Name,
-                        StartCourse = DateTime.Parse(model.StartCourse),
-                        EndCourse = DateTime.Parse(model.EndCourse),
+                       // StartCourse = DateTime.Parse(model.StartCourse),
+                        //EndCourse = DateTime.Parse(model.EndCourse),
                         Content = model.Content,
                         Student_Count = model.Student_Count,
                         StudyId = model.StudyId

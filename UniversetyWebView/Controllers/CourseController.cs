@@ -37,9 +37,9 @@ namespace UniversetyWebView.Controllers
                 Name = Request["Name"],
                 Content = Request["Content"],
                 Student_Count = int.Parse(Request["Student_Count"]),
-                StudyId = Request["StudyId"] != null && !Request["StudyId"].Equals("") ?  int.Parse(Request["StudyId"]) : default(int?),
-                StartCourse = Request["StartCourse"],
-                EndCourse = Request["EndCourse"],
+                StudyId = Request["StudyId"] != null && !Request["StudyId"].Equals("") ?  int.Parse(Request["StudyId"]) : default(int),
+                //StartCourse = Request["StartCourse"],
+                //EndCourse = Request["EndCourse"],
             });
             return RedirectToAction("Index");
         }

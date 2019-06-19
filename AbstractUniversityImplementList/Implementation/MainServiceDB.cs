@@ -106,13 +106,13 @@ namespace AbstractUniversityImplementList.Implementation
                 Student_Count = rec.Student_Count,
                 StudyId = rec.StudyId
             }).ToList();
-            int hourEnd = Convert.ToInt32(model.EndCourse.Substring(0, 2));
+           /* int hourEnd = Convert.ToInt32(model.EndCourse.Substring(0, 2));
             DateTime date = DateTime.Now;
             int hourNow = Convert.ToInt32(date.ToString("dd"));
             if (hourNow - hourEnd != 0)
             {
                 return true;
-            }
+            }*/
             return false;
         }
     }
