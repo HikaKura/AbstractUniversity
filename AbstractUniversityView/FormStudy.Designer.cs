@@ -121,7 +121,7 @@
             this.Controls.Add(this.labelOrientaton);
             this.Controls.Add(this.labelName);
             this.Name = "FormStudy";
-            this.Text = "FormCourse";
+            this.Text = "Данные о курсе";
             this.ResumeLayout(false);
             this.PerformLayout();
 

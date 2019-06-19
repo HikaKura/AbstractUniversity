@@ -95,6 +95,7 @@ namespace AbstractUniversityView
                         FirstName = textBoxFirstName.Text,
                         LastName = textBoxLastName.Text,
                         MiddleName = textBoxMiddleName.Text,
+                        Department = textBoxDepartment.Text,
                         Mail = textBoxMail.Text,
                         Password = textBoxpass.Text
                     });
@@ -106,6 +107,7 @@ namespace AbstractUniversityView
                         FirstName = textBoxFirstName.Text,
                         LastName = textBoxLastName.Text,
                         MiddleName = textBoxMiddleName.Text,
+                        Department = textBoxDepartment.Text,
                         Mail = textBoxMail.Text,
                         Password = textBoxpass.Text
                     });

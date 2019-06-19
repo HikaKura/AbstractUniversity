@@ -33,7 +33,6 @@
             this.преподавателиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аудиторииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обучениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.курсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateCourse = new System.Windows.Forms.Button();
             this.buttonGoingCourse = new System.Windows.Forms.Button();
             this.buttonEndCourse = new System.Windows.Forms.Button();
@@ -57,8 +56,7 @@
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.преподавателиToolStripMenuItem,
             this.аудиторииToolStripMenuItem,
-            this.обучениеToolStripMenuItem,
-            this.курсыToolStripMenuItem});
+            this.обучениеToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -83,13 +81,6 @@
             this.обучениеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.обучениеToolStripMenuItem.Text = "Обучение";
             this.обучениеToolStripMenuItem.Click += new System.EventHandler(this.обучениеToolStripMenuItem_Click);
-            // 
-            // курсыToolStripMenuItem
-            // 
-            this.курсыToolStripMenuItem.Name = "курсыToolStripMenuItem";
-            this.курсыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.курсыToolStripMenuItem.Text = "Курсы";
-            this.курсыToolStripMenuItem.Click += new System.EventHandler(this.курсыToolStripMenuItem_Click);
             // 
             // buttonCreateCourse
             // 
@@ -157,7 +148,6 @@
         private System.Windows.Forms.ToolStripMenuItem преподавателиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem аудиторииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обучениеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem курсыToolStripMenuItem;
         private System.Windows.Forms.Button buttonCreateCourse;
         private System.Windows.Forms.Button buttonGoingCourse;
         private System.Windows.Forms.Button buttonEndCourse;

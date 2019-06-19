@@ -1,4 +1,5 @@
-﻿using AbstractUniversityDAL.Interface;
+﻿using AbstractUniversityDAL.BindingModel;
+using AbstractUniversityDAL.Interface;
 using AbstractUniversityDAL.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -65,24 +66,47 @@ namespace AbstractUniversityView
             LoadData();
         }
 
-        private void курсыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonEndCourse_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+                try
+                {
+                    service.CourseFinished(new CourseBindingModel { Id = id });
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonGoingCourse_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+                try
+                {
+                    service.CourseGoing(new CourseBindingModel { Id = id });
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void buttonCreateCourse_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormStudy>();
+            form.ShowDialog();
+            LoadData();
         }
     }
 }

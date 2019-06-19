@@ -39,7 +39,8 @@ namespace AbstractUniversityImplementList.Implementation
         {
             Course element;
             CourseViewModel course;
-            using (var transaction = context.Database.BeginTransaction(){
+            using (var transaction = context.Database.BeginTransaction())
+            {
                 element = context.Courses.Where(rec => rec.Id == id).FirstOrDefault();
                 course = new CourseViewModel
                 {
