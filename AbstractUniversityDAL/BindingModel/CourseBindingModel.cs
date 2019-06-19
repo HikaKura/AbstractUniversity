@@ -14,6 +14,6 @@ namespace AbstractUniversityDAL.BindingModel
         public string StartCourse { get; set; }
         public string EndCourse { get; set; }
         public int Student_Count { get; set; }
-        public int? StudyId { get; set; }
+        public int StudyId { get; set; }
     }
 }

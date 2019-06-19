@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201906191933234_Study.Designer.cs">
       <DependentUpon>201906191933234_Study.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906192003392_Stud.cs" />
+    <Compile Include="Migrations\201906192003392_Stud.Designer.cs">
+      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906191933234_Study.resx">
       <DependentUpon>201906191933234_Study.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906192003392_Stud.resx">
+      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

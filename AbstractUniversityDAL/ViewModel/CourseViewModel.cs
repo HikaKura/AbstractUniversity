@@ -22,6 +22,6 @@ namespace AbstractUniversityDAL.ViewModel
         public int Student_Count { get; set; }
         [DisplayName("Название обучения")]
         public string StudyName { get; set; }
-        public int? StudyId { get; set; }
+        public int StudyId { get; set; }
     }
 }
