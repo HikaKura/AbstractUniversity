@@ -14,5 +14,6 @@ namespace AbstractUniversityDAL.Interface
         void NotBeginCourse(CourseBindingModel model);
         void CourseGoing(CourseBindingModel model);
         void CourseFinished(CourseBindingModel model);
+        bool Check(CourseBindingModel model);
     }
 }

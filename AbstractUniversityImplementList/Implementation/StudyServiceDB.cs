@@ -41,7 +41,7 @@ namespace AbstractUniversityImplementList.Implementation
                     });
                     context.SaveChanges();
                     // убираем дубли по компонентам
-                    var groupCourses = model.Courses
+                   /* var groupCourses = model.Courses
                         .GroupBy(rec => rec.Id)
                         .Select(rec => new
                         {
@@ -57,7 +57,7 @@ namespace AbstractUniversityImplementList.Implementation
                             Name = context.Courses.ElementAt(groupCourse.CourseId).Name
                         });
                         context.SaveChanges();
-                    }
+                    }*/
                     transaction.Commit();
                 }
                 catch (Exception)
@@ -134,6 +134,7 @@ namespace AbstractUniversityImplementList.Implementation
                 Name = rec.Name,
                 Orientation = rec.Orientation,
                 TeacherId = rec.TeacherId,
+                TeacherLastName = rec.Teacher.LastName,
                 Course = context.Courses
                     .Where(recPC => recPC.StudyId == rec.Id)
                     .Select(recPC => new CourseViewModel

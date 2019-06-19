@@ -74,6 +74,12 @@
     <Compile Include="FormClassrooms.Designer.cs">
       <DependentUpon>FormClassrooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCreateCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateCourse.Designer.cs">
+      <DependentUpon>FormCreateCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStudy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +98,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStudyCourse.cs">
+    <Compile Include="FormClassroomCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStudyCourse.Designer.cs">
-      <DependentUpon>FormStudyCourse.cs</DependentUpon>
+    <Compile Include="FormClassroomCourse.Designer.cs">
+      <DependentUpon>FormClassroomCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTeacher.cs">
       <SubType>Form</SubType>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="FormClassrooms.resx">
       <DependentUpon>FormClassrooms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateCourse.resx">
+      <DependentUpon>FormCreateCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStudies.resx">
       <DependentUpon>FormStudies.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,8 +136,8 @@
     <EmbeddedResource Include="FormStudy.resx">
       <DependentUpon>FormStudy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStudyCourse.resx">
-      <DependentUpon>FormStudyCourse.cs</DependentUpon>
+    <EmbeddedResource Include="FormClassroomCourse.resx">
+      <DependentUpon>FormClassroomCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>

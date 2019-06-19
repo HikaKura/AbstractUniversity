@@ -122,6 +122,7 @@
             this.Controls.Add(this.labelName);
             this.Name = "FormStudy";
             this.Text = "Данные о курсе";
+            this.Load += new System.EventHandler(this.FormTeacher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

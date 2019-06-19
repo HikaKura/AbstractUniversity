@@ -35,7 +35,7 @@ namespace AbstractUniversityView
                 {
                     dataGridView.DataSource = list;
                     dataGridView.Columns[0].Visible = false;
-                    dataGridView.Columns[6].Visible = false;
+                    //dataGridView.Columns[6].Visible = false;
                     dataGridView.Columns[1].AutoSizeMode =
                     DataGridViewAutoSizeColumnMode.Fill;
                 }
@@ -56,7 +56,9 @@ namespace AbstractUniversityView
 
         private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormClassrooms>();
+            form.ShowDialog();
+            LoadData();
         }
 
         private void обучениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,9 +106,18 @@ namespace AbstractUniversityView
 
         private void buttonCreateCourse_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormStudy>();
+            var form = Container.Resolve<FormCreateCourse>();
             form.ShowDialog();
             LoadData();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+           /* List<CourseViewModel> list = service.GetList();
+            if (service.Check(new CourseBindingModel())) {
+
+            }*/
         }
     }
 }

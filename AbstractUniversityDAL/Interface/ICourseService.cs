@@ -14,6 +14,7 @@ namespace AbstractUniversityDAL.Interface
         CourseViewModel GetElement(int id);
         void AddElement(CourseBindingModel model);
         void UpdElement(CourseBindingModel model);
+        void CheckElement(CourseBindingModel model);
         void DelElement(int id);
     }
 }

@@ -17,10 +17,7 @@ namespace AbstractUniversityView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        public int Id { set { id = value; } }
-        private int? id;
         private readonly IClassroomService service;
-        private List<ClassroomCourseViewModel> classroomCourses;
 
         public FormClassrooms(IClassroomService service)
         {
@@ -61,14 +58,12 @@ namespace AbstractUniversityView
         {
             try
             {
-                if (classroomCourses != null)
+                List<ClassroomViewModel> list = service.GetList();
+                if (list != null)
                 {
-                    dataGridView.DataSource = null;
-                    dataGridView.DataSource = classroomCourses;
+                    dataGridView.DataSource = list;
                     dataGridView.Columns[0].Visible = false;
-                    dataGridView.Columns[1].Visible = false;
-                    dataGridView.Columns[2].Visible = false;
-                    dataGridView.Columns[3].AutoSizeMode =
+                    dataGridView.Columns[1].AutoSizeMode =
                     DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
@@ -81,17 +76,9 @@ namespace AbstractUniversityView
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormClassroomCourse>();
+            var form = Container.Resolve<FormClassroom>();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                if (form.Model != null)
-                {
-                    if (id.HasValue)
-                    {
-                        form.Model.TechnicsId = id.Value;
-                    }
-                    classroomCourses.Add(form.Model);
-                }
                 LoadData();
             }
         }
@@ -103,9 +90,10 @@ namespace AbstractUniversityView
                 if (MessageBox.Show("Удалить запись", "Вопрос", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                     try
                     {
-                        classroomCourses.RemoveAt(dataGridView.SelectedRows[0].Cells[0].RowIndex);
+                        service.DelElement(id);
                     }
                     catch (Exception ex)
                     {
@@ -121,11 +109,10 @@ namespace AbstractUniversityView
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
-                var form = Container.Resolve<FormClassroomCourse>();
-                form.Model = classroomCourses[dataGridView.SelectedRows[0].Cells[0].RowIndex];
+                var form = Container.Resolve<FormClassroom>();
+                form.Id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    classroomCourses[dataGridView.SelectedRows[0].Cells[0].RowIndex] = form.Model;
                     LoadData();
                 }
             }
@@ -133,7 +120,7 @@ namespace AbstractUniversityView
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-
+            LoadData();
         }
     }
 }
