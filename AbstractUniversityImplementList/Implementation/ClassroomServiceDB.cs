@@ -53,7 +53,7 @@ namespace AbstractUniversityImplementList.Implementation
                         Id = recPC.Id,
                         ClassroomId = recPC.ClassroomId,
                         CourseId = recPC.CourseId,
-                        Name = recPC.Name
+                        // Name = recPC.Name
                     }).ToList()
                 };
             }
@@ -74,13 +74,20 @@ namespace AbstractUniversityImplementList.Implementation
                     element = new Classroom
                     {
                         Number = model.Number,
-                        Status = element.Status,
-                        Pavilion = element.Pavilion
+                        Status = model.Status,
+                        Pavilion = model.Pavilion
                     };
                     context.Classrooms.Add(element);
                     context.SaveChanges();
+                    context.ClassroomCourses.Add(new ClassroomCourse
+                    {
+                        ClassroomId = element.Id,
+                        Number = element.Number
+                        // Name = model.ClassroomCourses.Select(r => r.Name)
+                    });
+                    context.SaveChanges();
                     // убираем дубли по курсам
-                    var groupCourses = model.ClassroomCourses.GroupBy(rec => rec.CourseId).Select(rec => new
+                    /*var groupCourses = model.ClassroomCourses.GroupBy(rec => rec.CourseId).Select(rec => new
                     {
                         CourseId = rec.Key,
                         Name = rec.Where(recPC => recPC.Id == rec.Key).Select(r => r.Name)
@@ -95,7 +102,7 @@ namespace AbstractUniversityImplementList.Implementation
                             // Name = model.ClassroomCourses.Select(r => r.Name)
                         });
                         context.SaveChanges();
-                    }
+                    }*/
                     transaction.Commit();
                 }
                 catch (Exception)
@@ -112,12 +119,12 @@ namespace AbstractUniversityImplementList.Implementation
             {
                 try
                 {
-
                     Classroom element = context.Classrooms.FirstOrDefault(rec => rec.Id == id);
                     if (element != null)
                     {
-                        // удаяем записи по курсам при удалении аудитории
-                        context.ClassroomCourses.RemoveRange(context.ClassroomCourses.Where(rec => rec.Id == id));
+                        // удаляем записи по курсам при удалении аудитории
+                        context.ClassroomCourses.RemoveRange(context.ClassroomCourses.Where(rec => rec.Id == id - 4));
+                        context.SaveChanges();
                         context.Classrooms.Remove(element);
                         context.SaveChanges();
                     }
@@ -161,7 +168,7 @@ namespace AbstractUniversityImplementList.Implementation
                     var updateCourses = context.ClassroomCourses.Where(rec => rec.ClassroomId == model.Id && compIds.Contains(rec.CourseId));
                     foreach (var updateCourse in updateCourses)
                     {
-                        updateCourse.Name = model.ClassroomCourses.FirstOrDefault(rec => rec.Id == updateCourse.Id).Name;
+                        // updateCourse.Name = model.ClassroomCourses.FirstOrDefault(rec => rec.Id == updateCourse.Id).Name;
                     }
                     context.SaveChanges();
                     context.ClassroomCourses.RemoveRange(context.ClassroomCourses.Where(rec => rec.ClassroomId == model.Id && !compIds.Contains(rec.CourseId)));

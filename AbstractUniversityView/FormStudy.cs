@@ -32,15 +32,16 @@ namespace AbstractUniversityView
 
         private void FormTeacher_Load(object sender, EventArgs e)
         {
+            if (id.HasValue)
+            {
                 try
                 {
-                    List<TeacherViewModel> listT = serviceT.GetList();
-                    if (listT != null)
+                    StudyViewModel view = service.GetElement(id.Value);
+                    if (view != null)
                     {
-                        comboBoxTeacher.DisplayMember = "LastName";
-                        comboBoxTeacher.ValueMember = "Id";
-                        comboBoxTeacher.DataSource = listT;
-                        comboBoxTeacher.SelectedItem = null;
+                        textBoxName.Text = view.Name;
+                        textBoxOrientation.Text = view.Orientation;
+                        comboBoxTeacher.Text = view.TeacherLastName;
                     }
                 }
                 catch (Exception ex)
@@ -48,7 +49,24 @@ namespace AbstractUniversityView
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
                 }
-            
+            }
+            try
+            {
+                List<TeacherViewModel> listT = serviceT.GetList();
+                if (listT != null)
+                {
+                    comboBoxTeacher.DisplayMember = "LastName";
+                    comboBoxTeacher.ValueMember = "Id";
+                    comboBoxTeacher.DataSource = listT;
+                    comboBoxTeacher.SelectedItem = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+            }
+
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -73,12 +91,25 @@ namespace AbstractUniversityView
             }
             try
             {
-                service.AddElement(new StudyBindingModel
+                if (id.HasValue)
                 {
-                    TeacherId = Convert.ToInt32(comboBoxTeacher.SelectedValue),
-                    Name = textBoxName.Text,
-                    Orientation = textBoxOrientation.Text
-                });
+                    service.UpdElement(new StudyBindingModel
+                    {
+                        Id = id.Value,
+                        Name = textBoxName.Text,
+                        Orientation = textBoxOrientation.Text,
+                        TeacherId = Convert.ToInt32(comboBoxTeacher.SelectedValue)
+                    });
+                }
+                else
+                {
+                    service.AddElement(new StudyBindingModel
+                    {
+                        TeacherId = Convert.ToInt32(comboBoxTeacher.SelectedValue),
+                        Name = textBoxName.Text,
+                        Orientation = textBoxOrientation.Text
+                    });
+                }
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;

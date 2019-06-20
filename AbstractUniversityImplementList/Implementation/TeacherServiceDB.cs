@@ -78,8 +78,8 @@ namespace AbstractUniversityImplementList.Implementation
                     if (element != null)
                     {
                         // удаяем записи по компонентам при удалении изделия
-                        context.Studies.RemoveRange(context.Studies.Where(rec =>
-                            rec.TeacherId == id));
+                        //context.Studies.RemoveRange(context.Studies.Where(rec =>
+                           // rec.TeacherId == id));
                         context.Teachers.Remove(element);
                         context.SaveChanges();
                     }
@@ -187,7 +187,7 @@ namespace AbstractUniversityImplementList.Implementation
                         rec.FirstName == model.FirstName && rec.MiddleName == model.MiddleName && rec.Id != model.Id);
                     if (element != null)
                     {
-                        throw new Exception("Уже есть изделие с таким названием");
+                        throw new Exception("Уже есть такой преподаватель");
                     }
                     element = context.Teachers.FirstOrDefault(rec => rec.Id == model.Id);
                     if (element == null)
@@ -202,7 +202,7 @@ namespace AbstractUniversityImplementList.Implementation
                     element.Department = model.Department;
                     context.SaveChanges();
                     // обновляем существуюущие компоненты
-                    var compIds = model.Studies.Select(rec =>
+                   /* var compIds = model.Studies.Select(rec =>
                         rec.Id).Distinct();
                     var updateStudys = context.Studies.Where(rec =>
                         rec.TeacherId == model.Id && compIds.Contains(rec.Id));
@@ -216,7 +216,7 @@ namespace AbstractUniversityImplementList.Implementation
                     context.SaveChanges();
                     context.Studies.RemoveRange(context.Studies.Where(rec =>
                         rec.TeacherId == model.Id && !compIds.Contains(rec.Id)));
-                    context.SaveChanges();
+                    context.SaveChanges();*/
                     //новые записи
                     //var groupStudys = model.Studies
                     //    .Where(rec => rec.Id == 0)
