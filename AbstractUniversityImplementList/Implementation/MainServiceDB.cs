@@ -73,7 +73,7 @@ namespace AbstractUniversityImplementList.Implementation
                     context.SaveChanges();
                     try
                     {
-                        var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.ClassroomId).Select(rec => new
+                        var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.Id).Select(rec => new
                         {
                             ClassroomId = rec.Key,
                             //Number = rec.Key

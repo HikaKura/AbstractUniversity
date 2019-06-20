@@ -140,6 +140,18 @@
     <Compile Include="Migrations\201906201801323_ифслгггз.Designer.cs">
       <DependentUpon>201906201801323_ифслгггз.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201919229_updatenumber.cs" />
+    <Compile Include="Migrations\201906201919229_updatenumber.Designer.cs">
+      <DependentUpon>201906201919229_updatenumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201922212_noun.cs" />
+    <Compile Include="Migrations\201906201922212_noun.Designer.cs">
+      <DependentUpon>201906201922212_noun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201928588_nounaa.cs" />
+    <Compile Include="Migrations\201906201928588_nounaa.Designer.cs">
+      <DependentUpon>201906201928588_nounaa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
@@ -212,6 +224,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906201801323_ифслгггз.resx">
       <DependentUpon>201906201801323_ифслгггз.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201919229_updatenumber.resx">
+      <DependentUpon>201906201919229_updatenumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201922212_noun.resx">
+      <DependentUpon>201906201922212_noun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201928588_nounaa.resx">
+      <DependentUpon>201906201928588_nounaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

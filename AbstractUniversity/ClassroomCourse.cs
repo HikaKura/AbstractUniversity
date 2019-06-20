@@ -16,9 +16,10 @@ namespace AbstractUniversity
         public int ClassroomId { get; set; }
         [DataMember]
         public int? CourseId { get; set; }
-        // public string Name { get; set; }
         [DataMember]
-        public int? Number { get; set; }
+        public string Name { get; set; }
+        [DataMember]
+        public int Number { get; set; }
         [DataMember]
         public virtual Classroom Classroom { get; set; }
         [DataMember]
