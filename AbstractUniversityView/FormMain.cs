@@ -19,11 +19,13 @@ namespace AbstractUniversityView
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly IMainService service;
+        private readonly IBackUpService serviceB;
 
-        public FormMain(IMainService service)
+        public FormMain(IMainService service, IBackUpService serviceB)
         {
             InitializeComponent();
             this.service = service;
+            this.serviceB = serviceB;
         }
 
         private void LoadData()
@@ -119,6 +121,21 @@ namespace AbstractUniversityView
             if (service.Check(new CourseBindingModel())) {
 
             }*/
+        }
+
+        private void сохранитьБДToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                serviceB.BackUpForAdmin();
+                //serviceB.BackUpForClent();
+                MessageBox.Show("Успешно отправлено на почту", "Успех", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -78,8 +78,8 @@ namespace AbstractUniversityImplementList.Implementation
                     if (element != null)
                     {
                         // удаяем записи по компонентам при удалении изделия
-                        context.Studies.RemoveRange(context.Studies.Where(rec =>
-                            rec.TeacherId == id));
+                        //context.Studies.RemoveRange(context.Studies.Where(rec =>
+                           // rec.TeacherId == id));
                         context.Teachers.Remove(element);
                         context.SaveChanges();
                     }

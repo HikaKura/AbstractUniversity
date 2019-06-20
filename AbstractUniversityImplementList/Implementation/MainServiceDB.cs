@@ -40,7 +40,7 @@ namespace AbstractUniversityImplementList.Implementation
                     Id = rep.Id,
                     CourseId = rep.CourseId,
                     ClassroomId = rep.ClassroomId,
-                    Number = rep.Number
+                   // Number = rep.Number
                 }).ToList(),
                 ClassroomId = rec.ClassroomId
             }).ToList();
@@ -71,11 +71,14 @@ namespace AbstractUniversityImplementList.Implementation
                     };
                     context.Courses.Add(element);
                     context.SaveChanges();
-                    var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.ClassroomId).Select(rec => new
+                    try
                     {
-                        ClassroomId = rec.Key,
-                        //Number = rec.Key
-                    });
+                        var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.ClassroomId).Select(rec => new
+                        {
+                            ClassroomId = rec.Key,
+                            //Number = rec.Key
+                        });
+                    
                     // добавляем компоненты
                     foreach (var groupClassroom in groupClassrooms)
                     {
@@ -83,10 +86,15 @@ namespace AbstractUniversityImplementList.Implementation
                         {
                             CourseId = element.Id,
                             ClassroomId = groupClassroom.ClassroomId,
-                            Name = element.Name,
+                           // Name = element.Name,
                             //Number = groupClassroom.Number
                         });
                         context.SaveChanges();
+                    }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
                     }
                     transaction.Commit();
                 }

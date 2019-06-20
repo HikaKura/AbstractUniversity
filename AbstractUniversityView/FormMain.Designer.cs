@@ -38,6 +38,7 @@
             this.buttonEndCourse = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.сохранитьБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.сохранитьБДToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1015, 24);
@@ -131,6 +133,13 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // сохранитьБДToolStripMenuItem
+            // 
+            this.сохранитьБДToolStripMenuItem.Name = "сохранитьБДToolStripMenuItem";
+            this.сохранитьБДToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.сохранитьБДToolStripMenuItem.Text = "Сохранить БД";
+            this.сохранитьБДToolStripMenuItem.Click += new System.EventHandler(this.сохранитьБДToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +174,7 @@
         private System.Windows.Forms.Button buttonEndCourse;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьБДToolStripMenuItem;
     }
 }
 

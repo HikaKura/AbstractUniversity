@@ -36,6 +36,7 @@ namespace AbstractUniversityView
             currentContainer.RegisterType<IStudyService, StudyServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<ICourseService,CourseServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IMainService, MainServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IBackUpService, BackUpServiceDB>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

@@ -117,6 +117,17 @@ namespace AbstractUniversityView
                         Number = classroomCourse[i].Number
                     });
                 }
+                /*List<ClassroomCourseViewModel> ClassroomCourseV = new List<ClassroomCourseViewModel>();
+                for (int i = 0; i < classroomCourse.Count; ++i)
+                {
+                    ClassroomCourseV.Add(new ClassroomCourseViewModel
+                    {
+                        Id = classroomCourse[i].Id,
+                        ClassroomId = classroomCourse[i].ClassroomId,
+                        // CourseId = classroomCourse[i].CourseId,
+                        Number = classroomCourse[i].Number
+                    });
+                }*/
                 if (id.HasValue)
                 {
                     service.UpdElement(new ClassroomBindingModel
