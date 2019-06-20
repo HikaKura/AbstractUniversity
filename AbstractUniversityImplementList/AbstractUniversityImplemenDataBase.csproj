@@ -98,6 +98,10 @@
     <Compile Include="Migrations\201906192010122_Stu.Designer.cs">
       <DependentUpon>201906192010122_Stu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201951559_Change db catalog.cs" />
+    <Compile Include="Migrations\201906201951559_Change db catalog.Designer.cs">
+      <DependentUpon>201906201951559_Change db catalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906192010122_Stu.resx">
       <DependentUpon>201906192010122_Stu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201951559_Change db catalog.resx">
+      <DependentUpon>201906201951559_Change db catalog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

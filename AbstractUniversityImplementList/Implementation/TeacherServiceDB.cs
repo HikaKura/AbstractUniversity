@@ -37,7 +37,7 @@ namespace AbstractUniversityImplementList.Implementation
                         MiddleName = model.MiddleName,
                         LastName = model.LastName,
                         Department = model.Department,
-                        Password = model.Password,
+                   //     Password = model.Password,
                         Mail = model.Mail
                     });
                     context.SaveChanges();
@@ -110,7 +110,7 @@ namespace AbstractUniversityImplementList.Implementation
                     LastName = element.LastName,
                     Department = element.Department,
                     Mail = element.Mail,
-                    Password = element.Password,
+                  //  Password = element.Password,
                     Requests = context.Requests.Where(recPC => recPC.TeacherId == element.Id).Select(recPC => new RequestViewModel
                     {
                         Id = recPC.Id,
@@ -149,7 +149,7 @@ namespace AbstractUniversityImplementList.Implementation
                 LastName = rec.LastName,
                 Department = rec.Department,
                 Mail = rec.Mail,
-                Password = rec.Password,
+             //   Password = rec.Password,
                 Requests = context.Requests.Where(recPC => recPC.TeacherId == rec.Id).Select(recPC => new RequestViewModel
                 {
                     Id = recPC.Id,
@@ -198,7 +198,7 @@ namespace AbstractUniversityImplementList.Implementation
                     element.LastName = model.LastName;
                     element.MiddleName = model.MiddleName;
                     element.Mail = model.Mail;
-                    element.Password = model.Password;
+                   // element.Password = model.Password;
                     element.Department = model.Department;
                     context.SaveChanges();
                     // обновляем существуюущие компоненты
