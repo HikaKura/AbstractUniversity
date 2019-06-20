@@ -123,7 +123,7 @@ namespace AbstractUniversityImplementList.Implementation
                     if (element != null)
                     {
                         // удаляем записи по курсам при удалении аудитории
-                        context.ClassroomCourses.RemoveRange(context.ClassroomCourses.Where(rec => rec.Id == id - 4));
+                        context.ClassroomCourses.RemoveRange(context.ClassroomCourses.Where(rec => rec.Id == id));
                         context.SaveChanges();
                         context.Classrooms.Remove(element);
                         context.SaveChanges();
