@@ -6,7 +6,7 @@ namespace AbstractUniversityImplementList
 {
     public class UniversityDbContext : DbContext
     {
-        public UniversityDbContext() : base("UniversityDb")
+        public UniversityDbContext() : base("UniversityDatab")
         {
             //настройки конфигурации для entity
             Configuration.ProxyCreationEnabled = false;

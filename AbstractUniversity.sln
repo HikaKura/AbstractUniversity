@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversityImplemenD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractUniversityView", "AbstractUniversityView\AbstractUniversityView.csproj", "{004FAF0A-AA29-4A6B-810E-D79F22D3B158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversetyWebView", "UniversetyWebView\UniversetyWebView.csproj", "{E91BB9E9-7E46-497D-B9E5-82FDF2D824BB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityWeb", "UniversityWeb\UniversityWeb.csproj", "{72CED305-83F7-4701-96BE-DB3BD573FCA5}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{004FAF0A-AA29-4A6B-810E-D79F22D3B158}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{004FAF0A-AA29-4A6B-810E-D79F22D3B158}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{004FAF0A-AA29-4A6B-810E-D79F22D3B158}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E91BB9E9-7E46-497D-B9E5-82FDF2D824BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E91BB9E9-7E46-497D-B9E5-82FDF2D824BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E91BB9E9-7E46-497D-B9E5-82FDF2D824BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E91BB9E9-7E46-497D-B9E5-82FDF2D824BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72CED305-83F7-4701-96BE-DB3BD573FCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72CED305-83F7-4701-96BE-DB3BD573FCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CED305-83F7-4701-96BE-DB3BD573FCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU

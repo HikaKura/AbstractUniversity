@@ -68,93 +68,9 @@
     <Compile Include="Implementation\MainServiceDB.cs" />
     <Compile Include="Implementation\StudyServiceDB.cs" />
     <Compile Include="Implementation\TeacherServiceDB.cs" />
-    <Compile Include="Migrations\201905312006114_secondMigration.cs" />
-    <Compile Include="Migrations\201905312006114_secondMigration.Designer.cs">
-      <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905312258540_newtMigration.cs" />
-    <Compile Include="Migrations\201905312258540_newtMigration.Designer.cs">
-      <DependentUpon>201905312258540_newtMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905312323020_datetime.cs" />
-    <Compile Include="Migrations\201905312323020_datetime.Designer.cs">
-      <DependentUpon>201905312323020_datetime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906010036569_Web.cs" />
-    <Compile Include="Migrations\201906010036569_Web.Designer.cs">
-      <DependentUpon>201906010036569_Web.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906010110432_UpdCourseMigration.cs" />
-    <Compile Include="Migrations\201906010110432_UpdCourseMigration.Designer.cs">
-      <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906191738554_Upd.cs" />
-    <Compile Include="Migrations\201906191738554_Upd.Designer.cs">
-      <DependentUpon>201906191738554_Upd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906191933234_Study.cs" />
-    <Compile Include="Migrations\201906191933234_Study.Designer.cs">
-      <DependentUpon>201906191933234_Study.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906192003392_Stud.cs" />
-    <Compile Include="Migrations\201906192003392_Stud.Designer.cs">
-      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906192010122_Stu.cs" />
-    <Compile Include="Migrations\201906192010122_Stu.Designer.cs">
-      <DependentUpon>201906192010122_Stu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906200818464_aaaa.cs" />
-    <Compile Include="Migrations\201906200818464_aaaa.Designer.cs">
-      <DependentUpon>201906200818464_aaaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201101544_classroomandcourse.cs" />
-    <Compile Include="Migrations\201906201101544_classroomandcourse.Designer.cs">
-      <DependentUpon>201906201101544_classroomandcourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201127102_clas.cs" />
-    <Compile Include="Migrations\201906201127102_clas.Designer.cs">
-      <DependentUpon>201906201127102_clas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201139207_cla.cs" />
-    <Compile Include="Migrations\201906201139207_cla.Designer.cs">
-      <DependentUpon>201906201139207_cla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201140547_chtoto.cs" />
-    <Compile Include="Migrations\201906201140547_chtoto.Designer.cs">
-      <DependentUpon>201906201140547_chtoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201306563_bbbb.cs" />
-    <Compile Include="Migrations\201906201306563_bbbb.Designer.cs">
-      <DependentUpon>201906201306563_bbbb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201435409_changeCourseClass.cs" />
-    <Compile Include="Migrations\201906201435409_changeCourseClass.Designer.cs">
-      <DependentUpon>201906201435409_changeCourseClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201616543_hz.cs" />
-    <Compile Include="Migrations\201906201616543_hz.Designer.cs">
-      <DependentUpon>201906201616543_hz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201801323_ифслгггз.cs" />
-    <Compile Include="Migrations\201906201801323_ифслгггз.Designer.cs">
-      <DependentUpon>201906201801323_ифслгггз.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201919229_updatenumber.cs" />
-    <Compile Include="Migrations\201906201919229_updatenumber.Designer.cs">
-      <DependentUpon>201906201919229_updatenumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201922212_noun.cs" />
-    <Compile Include="Migrations\201906201922212_noun.Designer.cs">
-      <DependentUpon>201906201922212_noun.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201928588_nounaa.cs" />
-    <Compile Include="Migrations\201906201928588_nounaa.Designer.cs">
-      <DependentUpon>201906201928588_nounaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906201951559_Change db catalog.cs" />
-    <Compile Include="Migrations\201906201951559_Change db catalog.Designer.cs">
-      <DependentUpon>201906201951559_Change db catalog.cs</DependentUpon>
+    <Compile Include="Migrations\201906202120431_FirstMigration.cs" />
+    <Compile Include="Migrations\201906202120431_FirstMigration.Designer.cs">
+      <DependentUpon>201906202120431_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,32 +91,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905312006114_secondMigration.resx">
-      <DependentUpon>201905312006114_secondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905312258540_newtMigration.resx">
-      <DependentUpon>201905312258540_newtMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905312323020_datetime.resx">
-      <DependentUpon>201905312323020_datetime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906010036569_Web.resx">
-      <DependentUpon>201906010036569_Web.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906010110432_UpdCourseMigration.resx">
-      <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906191738554_Upd.resx">
-      <DependentUpon>201906191738554_Upd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906191933234_Study.resx">
-      <DependentUpon>201906191933234_Study.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906192003392_Stud.resx">
-      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906192010122_Stu.resx">
-      <DependentUpon>201906192010122_Stu.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906202120431_FirstMigration.resx">
+      <DependentUpon>201906202120431_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
