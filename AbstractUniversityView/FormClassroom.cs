@@ -113,8 +113,8 @@ namespace AbstractUniversityView
                     {
                         Id = classroomCourse[i].Id,
                         ClassroomId = classroomCourse[i].ClassroomId,
-                        CourseId = classroomCourse[i].CourseId,
-                        Name = classroomCourse[i].Name
+                       // CourseId = classroomCourse[i].CourseId,
+                        Number = classroomCourse[i].Number
                     });
                 }
                 if (id.HasValue)

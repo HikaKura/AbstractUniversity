@@ -12,6 +12,7 @@ namespace AbstractUniversity
         public int ClassroomId { get; set; }
         public int? CourseId { get; set; }
         public string Name { get; set; }
+        public int Number { get; set; }
         public virtual Classroom Classroom { get; set; }
         public virtual Course Course { get; set; }
     }

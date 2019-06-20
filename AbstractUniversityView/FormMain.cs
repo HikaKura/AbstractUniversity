@@ -35,8 +35,9 @@ namespace AbstractUniversityView
                 {
                     dataGridView.DataSource = list;
                     dataGridView.Columns[0].Visible = false;
-                    //dataGridView.Columns[6].Visible = false;
-                    dataGridView.Columns[1].AutoSizeMode =
+                    dataGridView.Columns[10].Visible = false;
+                    dataGridView.Columns[11].Visible = false;
+                    dataGridView.Columns[7].AutoSizeMode =
                     DataGridViewAutoSizeColumnMode.Fill;
                 }
             }

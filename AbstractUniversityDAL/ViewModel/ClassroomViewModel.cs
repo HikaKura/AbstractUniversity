@@ -12,7 +12,7 @@ namespace AbstractUniversityDAL.ViewModel
         public int Id { get; set; }
         [DisplayName("Номер кабинета")]
         public int Number { get; set; }
-        [DisplayName("Занятость")]
+        [DisplayName("Свободно?")]
         public bool Status { get; set; }
         [DisplayName("Номер корпуса")]
         public int Pavilion { get; set; }

@@ -30,7 +30,9 @@ namespace AbstractUniversityImplementList.Implementation
                 EndCourse = rec.EndCourse == null ? "" : SqlFunctions.DateName("dd", rec.EndCourse) + " " + SqlFunctions.DateName("mm", rec.EndCourse) + " " + SqlFunctions.DateName("yyyy", rec.EndCourse),
                 Content = rec.Content,
                 Student_Count = rec.Student_Count,
-                StudyId = rec.StudyId
+                StudyId = rec.StudyId,
+                StudyName = rec.Study.Name,
+                //ClassroomId= rec.ClassroomId
             }).ToList();
             return result;
         }

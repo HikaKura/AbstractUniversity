@@ -20,12 +20,14 @@ namespace AbstractUniversityView
         public new IUnityContainer Container { get; set; }
         private readonly IStudyService serviceS;
         private readonly IMainService service;
+        private readonly IClassroomService serviceC;
 
-        public FormCreateCourse(IStudyService serviceS, IMainService service)
+        public FormCreateCourse(IStudyService serviceS, IMainService service, IClassroomService serviceC)
         {
             InitializeComponent();
             this.service = service;
             this.serviceS = serviceS;
+            this.serviceC = serviceC;
         }
 
         private void FormCreateCourse_Load(object sender, EventArgs e)
@@ -39,6 +41,13 @@ namespace AbstractUniversityView
                     comboBoxStudy.ValueMember = "Id";
                     comboBoxStudy.DataSource = listS;
                     comboBoxStudy.SelectedItem = null;
+                }
+                List<ClassroomViewModel> listC = serviceC.GetList();
+                if (listC != null) {
+                    comboBoxClass.DisplayMember = "Number";
+                    comboBoxClass.ValueMember = "Id";
+                    comboBoxClass.DataSource = listC;
+                    comboBoxClass.SelectedItem = null;
                 }
             }
             catch (Exception ex)
@@ -74,6 +83,12 @@ namespace AbstractUniversityView
                MessageBoxIcon.Error);
                 return;
             }
+            if (comboBoxClass.SelectedValue == null)
+            {
+                MessageBox.Show("Выберите Аудиторию", "Ошибка", MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 service.NotBeginCourse(new CourseBindingModel
@@ -81,7 +96,8 @@ namespace AbstractUniversityView
                     Name = textBoxName.Text,
                     Content = textBoxContent.Text,
                     Student_Count = Convert.ToInt32(textBoxCount.Text),
-                    StudyId = Convert.ToInt32(comboBoxStudy.SelectedValue)
+                    StudyId = Convert.ToInt32(comboBoxStudy.SelectedValue),
+                    ClassroomId = Convert.ToInt32(comboBoxClass.SelectedValue)
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);

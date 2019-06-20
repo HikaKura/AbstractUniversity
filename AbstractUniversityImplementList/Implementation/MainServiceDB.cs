@@ -27,28 +27,75 @@ namespace AbstractUniversityImplementList.Implementation
             {
                 Id = rec.Id,
                 Name = rec.Name,
+                Status = rec.Status.ToString(),
                 StartCourse = SqlFunctions.DateName("dd", rec.StartCourse) + " " + SqlFunctions.DateName("mm", rec.StartCourse) + " " + SqlFunctions.DateName("yyyy", rec.StartCourse),
                 EndCourse = rec.EndCourse == null ? "" : SqlFunctions.DateName("dd", rec.EndCourse) + " " + SqlFunctions.DateName("mm", rec.EndCourse) + " " + SqlFunctions.DateName("yyyy", rec.EndCourse),
                 Content = rec.Content,
                 Student_Count = rec.Student_Count,
                 StudyName = rec.Study.Name,
-                StudyId = rec.StudyId
+                TeacherFIO = rec.Study.Teacher.LastName,
+                StudyId = rec.StudyId,
+                ClassroomCourses = context.ClassroomCourses.Where(rep => rep.CourseId == rec.Id).Select(rep => new ClassroomCourseViewModel
+                {
+                    Id = rep.Id,
+                    CourseId = rep.CourseId,
+                    ClassroomId = rep.ClassroomId,
+                    Number = rep.Number
+                }).ToList(),
+                ClassroomId = rec.ClassroomId
             }).ToList();
             return result;
         }
 
         public void NotBeginCourse(CourseBindingModel model)
         {
-            context.Courses.Add(new Course
+            using (var transaction = context.Database.BeginTransaction())
             {
-                Name = model.Name,
-                StartCourse = DateTime.Now,
-                Content = model.Content,
-                Student_Count = model.Student_Count,
-                StudyId = model.StudyId,
-                Status = CourseStatus.NotBegin
-            });
-            context.SaveChanges();
+                try
+                {
+                    Course element = context.Courses.FirstOrDefault(rec => rec.Name == model.Name);
+                    if (element != null)
+                    {
+                        throw new Exception("Уже есть курс с таким названием");
+                    }
+                    element = new Course
+                    {
+                        Name = model.Name,
+                        StartCourse = DateTime.Now,
+                        Content = model.Content,
+                        Student_Count = model.Student_Count,
+                        StudyId = model.StudyId,
+                        ClassroomId = model.ClassroomId,
+                        Status = CourseStatus.NotBegin,
+
+                    };
+                    context.Courses.Add(element);
+                    context.SaveChanges();
+                    var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.ClassroomId).Select(rec => new
+                    {
+                        ClassroomId = rec.Key,
+                        //Number = rec.Key
+                    });
+                    // добавляем компоненты
+                    foreach (var groupClassroom in groupClassrooms)
+                    {
+                        context.ClassroomCourses.Add(new ClassroomCourse
+                        {
+                            CourseId = element.Id,
+                            ClassroomId = groupClassroom.ClassroomId,
+                            Name = element.Name,
+                            //Number = groupClassroom.Number
+                        });
+                        context.SaveChanges();
+                    }
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    throw;
+                }
+            }
         }
 
         public void CourseGoing(CourseBindingModel model)
@@ -106,13 +153,13 @@ namespace AbstractUniversityImplementList.Implementation
                 Student_Count = rec.Student_Count,
                 StudyId = rec.StudyId
             }).ToList();
-           /* int hourEnd = Convert.ToInt32(model.EndCourse.Substring(0, 2));
-            DateTime date = DateTime.Now;
-            int hourNow = Convert.ToInt32(date.ToString("dd"));
-            if (hourNow - hourEnd != 0)
-            {
-                return true;
-            }*/
+            /* int hourEnd = Convert.ToInt32(model.EndCourse.Substring(0, 2));
+             DateTime date = DateTime.Now;
+             int hourNow = Convert.ToInt32(date.ToString("dd"));
+             if (hourNow - hourEnd != 0)
+             {
+                 return true;
+             }*/
             return false;
         }
     }

@@ -13,14 +13,14 @@ namespace AbstractUniversity
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
         public DateTime StartCourse { get; set; }
-        [Required]
         public DateTime? EndCourse { get; set; }
         public string Content { get; set; }
         public int Student_Count { get; set; }
         public int StudyId { get; set; }
         public CourseStatus Status { get; set; }
+        public int ClassroomId { get; set; }
+        //public virtual ClassroomCourse ClassroomCourse { get; set; }
         [ForeignKey("CourseId")]
         public virtual List<ClassroomCourse> ClassroomCourses { get; set; }
         [ForeignKey("CourseId")]

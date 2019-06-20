@@ -11,9 +11,9 @@ namespace AbstractUniversityDAL.BindingModel
         public int Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
-      //  public string StartCourse { get; set; }
-       // public string EndCourse { get; set; }
         public int Student_Count { get; set; }
         public int StudyId { get; set; }
+        public int ClassroomId { get; set; }
+        public virtual List<ClassroomCourseBindingModel> ClassroomCourses { get; set; }
     }
 }

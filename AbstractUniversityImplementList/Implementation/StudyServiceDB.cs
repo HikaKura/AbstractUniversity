@@ -171,9 +171,10 @@ namespace AbstractUniversityImplementList.Implementation
                         throw new Exception("Элемент не найден");
                     }
                     element.Name = model.Name;
+                    element.Orientation = model.Orientation;
                     context.SaveChanges();
                     // обновляем существуюущие компоненты
-                    var compIds = model.Courses.Select(rec =>
+                   /* var compIds = model.Courses.Select(rec =>
                         rec.Id).Distinct();
                     var updateCourses = context.Courses.Where(rec =>
                         rec.StudyId == model.Id && compIds.Contains(rec.Id));
@@ -213,7 +214,7 @@ namespace AbstractUniversityImplementList.Implementation
                             });
                         }
                         context.SaveChanges();
-                    }
+                    }*/
                     transaction.Commit();
                 }
                 catch (Exception)

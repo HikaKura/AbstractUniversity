@@ -74,13 +74,20 @@ namespace AbstractUniversityImplementList.Implementation
                     element = new Classroom
                     {
                         Number = model.Number,
-                        Status = element.Status,
-                        Pavilion = element.Pavilion
+                        Status = model.Status,
+                        Pavilion = model.Pavilion
                     };
                     context.Classrooms.Add(element);
                     context.SaveChanges();
+                    context.ClassroomCourses.Add(new ClassroomCourse
+                    {
+                        ClassroomId = element.Id,
+                        Number = element.Number
+                        // Name = model.ClassroomCourses.Select(r => r.Name)
+                    });
+                    context.SaveChanges();
                     // убираем дубли по курсам
-                    var groupCourses = model.ClassroomCourses.GroupBy(rec => rec.CourseId).Select(rec => new
+                    /*var groupCourses = model.ClassroomCourses.GroupBy(rec => rec.CourseId).Select(rec => new
                     {
                         CourseId = rec.Key,
                         Name = rec.Where(recPC => recPC.Id == rec.Key).Select(r => r.Name)
@@ -95,7 +102,7 @@ namespace AbstractUniversityImplementList.Implementation
                             // Name = model.ClassroomCourses.Select(r => r.Name)
                         });
                         context.SaveChanges();
-                    }
+                    }*/
                     transaction.Commit();
                 }
                 catch (Exception)

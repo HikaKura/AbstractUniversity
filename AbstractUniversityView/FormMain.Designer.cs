@@ -48,7 +48,7 @@
             this.справочникиToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1015, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -85,7 +85,7 @@
             // 
             // buttonCreateCourse
             // 
-            this.buttonCreateCourse.Location = new System.Drawing.Point(689, 41);
+            this.buttonCreateCourse.Location = new System.Drawing.Point(913, 53);
             this.buttonCreateCourse.Name = "buttonCreateCourse";
             this.buttonCreateCourse.Size = new System.Drawing.Size(90, 41);
             this.buttonCreateCourse.TabIndex = 1;
@@ -95,7 +95,7 @@
             // 
             // buttonGoingCourse
             // 
-            this.buttonGoingCourse.Location = new System.Drawing.Point(689, 129);
+            this.buttonGoingCourse.Location = new System.Drawing.Point(913, 141);
             this.buttonGoingCourse.Name = "buttonGoingCourse";
             this.buttonGoingCourse.Size = new System.Drawing.Size(90, 41);
             this.buttonGoingCourse.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             // buttonEndCourse
             // 
-            this.buttonEndCourse.Location = new System.Drawing.Point(689, 209);
+            this.buttonEndCourse.Location = new System.Drawing.Point(913, 221);
             this.buttonEndCourse.Name = "buttonEndCourse";
             this.buttonEndCourse.Size = new System.Drawing.Size(90, 41);
             this.buttonEndCourse.TabIndex = 3;
@@ -118,12 +118,12 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(6, 24);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(663, 380);
+            this.dataGridView.Size = new System.Drawing.Size(901, 380);
             this.dataGridView.TabIndex = 4;
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(689, 294);
+            this.buttonUpdate.Location = new System.Drawing.Point(913, 306);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(90, 41);
             this.buttonUpdate.TabIndex = 5;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 369);
+            this.ClientSize = new System.Drawing.Size(1015, 403);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.buttonEndCourse);
