@@ -27,10 +27,11 @@ namespace AbstractUniversityImplementList.Implementation
             {
                 Id = rec.Id,
                 Name = rec.Name,
-                StartCourse = SqlFunctions.DateName("dd", rec.StartCourse) + " " + SqlFunctions.DateName("mm", rec.StartCourse) + " " +  SqlFunctions.DateName("yyyy", rec.StartCourse),
+                StartCourse = SqlFunctions.DateName("dd", rec.StartCourse) + " " + SqlFunctions.DateName("mm", rec.StartCourse) + " " + SqlFunctions.DateName("yyyy", rec.StartCourse),
                 EndCourse = rec.EndCourse == null ? "" : SqlFunctions.DateName("dd", rec.EndCourse) + " " + SqlFunctions.DateName("mm", rec.EndCourse) + " " + SqlFunctions.DateName("yyyy", rec.EndCourse),
                 Content = rec.Content,
                 Student_Count = rec.Student_Count,
+                StudyName = rec.Study.Name,
                 StudyId = rec.StudyId
             }).ToList();
             return result;
@@ -91,6 +92,28 @@ namespace AbstractUniversityImplementList.Implementation
             element.EndCourse = DateTime.Now;
             element.Status = CourseStatus.Finished;
             context.SaveChanges();
+        }
+
+        public bool Check(CourseBindingModel model)
+        {
+            List<CourseViewModel> result = context.Courses.Select(rec => new CourseViewModel
+            {
+                Id = rec.Id,
+                Name = rec.Name,
+                StartCourse = SqlFunctions.DateName("dd", rec.StartCourse) + " " + SqlFunctions.DateName("mm", rec.StartCourse) + " " + SqlFunctions.DateName("yyyy", rec.StartCourse),
+                EndCourse = rec.EndCourse == null ? "" : SqlFunctions.DateName("dd", rec.EndCourse) + " " + SqlFunctions.DateName("mm", rec.EndCourse) + " " + SqlFunctions.DateName("yyyy", rec.EndCourse),
+                Content = rec.Content,
+                Student_Count = rec.Student_Count,
+                StudyId = rec.StudyId
+            }).ToList();
+           /* int hourEnd = Convert.ToInt32(model.EndCourse.Substring(0, 2));
+            DateTime date = DateTime.Now;
+            int hourNow = Convert.ToInt32(date.ToString("dd"));
+            if (hourNow - hourEnd != 0)
+            {
+                return true;
+            }*/
+            return false;
         }
     }
 }

@@ -32,21 +32,12 @@ namespace AbstractUniversityView
 
         private void FormTeacher_Load(object sender, EventArgs e)
         {
-            if (id.HasValue)
-            {
                 try
                 {
-                    StudyViewModel view = service.GetElement(id.Value);
-                    if (view != null)
-                    {
-                        textBoxName.Text = view.Name;
-                        textBoxOrientation.Text = view.Orientation;
-                    }
-
                     List<TeacherViewModel> listT = serviceT.GetList();
                     if (listT != null)
                     {
-                        comboBoxTeacher.DisplayMember = "lastName";
+                        comboBoxTeacher.DisplayMember = "LastName";
                         comboBoxTeacher.ValueMember = "Id";
                         comboBoxTeacher.DataSource = listT;
                         comboBoxTeacher.SelectedItem = null;
@@ -57,7 +48,7 @@ namespace AbstractUniversityView
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
                 }
-            }
+            
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

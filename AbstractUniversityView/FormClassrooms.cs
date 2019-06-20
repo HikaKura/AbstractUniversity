@@ -13,33 +13,56 @@ using Unity;
 
 namespace AbstractUniversityView
 {
-    public partial class FormStudies : Form
+    public partial class FormClassrooms : Form
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        private readonly IStudyService service;
+        private readonly IClassroomService service;
 
-        public FormStudies(IStudyService service)
+        public FormClassrooms(IClassroomService service)
         {
             InitializeComponent();
             this.service = service;
         }
 
-        private void FormStudies_Load(object sender, EventArgs e)
+        private void FormClassrooms_Load(object sender, EventArgs e)
         {
             LoadData();
+            //if (id.HasValue)
+            //{
+            //    try
+            //    {
+            //        ClassroomViewModel view = service.GetElement(id.Value);
+            //        if (view != null)
+            //        {
+            //            textBoxNumber.Text = view.Number;
+            //            textBoxPavilion.Text = view.Pavilion;
+            //            textBoxStatus.Text = view.Status;
+            //            classroomCourses = view.ClassroomCourses;
+            //            LoadData();
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+            //       MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    classroomCourses = new List<ClassroomCourseViewModel>();
+            //}
         }
 
         private void LoadData()
         {
             try
             {
-                List<StudyViewModel> list = service.GetList();
+                List<ClassroomViewModel> list = service.GetList();
                 if (list != null)
                 {
                     dataGridView.DataSource = list;
                     dataGridView.Columns[0].Visible = false;
-                    dataGridView.Columns[4].Visible = false;
                     dataGridView.Columns[1].AutoSizeMode =
                     DataGridViewAutoSizeColumnMode.Fill;
                 }
@@ -53,7 +76,7 @@ namespace AbstractUniversityView
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormStudy>();
+            var form = Container.Resolve<FormClassroom>();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
@@ -86,7 +109,7 @@ namespace AbstractUniversityView
         {
             if (dataGridView.SelectedRows.Count == 1)
             {
-                var form = Container.Resolve<FormStudy>();
+                var form = Container.Resolve<FormClassroom>();
                 form.Id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 if (form.ShowDialog() == DialogResult.OK)
                 {

@@ -82,6 +82,22 @@
     <Compile Include="Migrations\201906010110432_UpdCourseMigration.Designer.cs">
       <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906191738554_Upd.cs" />
+    <Compile Include="Migrations\201906191738554_Upd.Designer.cs">
+      <DependentUpon>201906191738554_Upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906191933234_Study.cs" />
+    <Compile Include="Migrations\201906191933234_Study.Designer.cs">
+      <DependentUpon>201906191933234_Study.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906192003392_Stud.cs" />
+    <Compile Include="Migrations\201906192003392_Stud.Designer.cs">
+      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906192010122_Stu.cs" />
+    <Compile Include="Migrations\201906192010122_Stu.Designer.cs">
+      <DependentUpon>201906192010122_Stu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
@@ -115,6 +131,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906010110432_UpdCourseMigration.resx">
       <DependentUpon>201906010110432_UpdCourseMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191738554_Upd.resx">
+      <DependentUpon>201906191738554_Upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191933234_Study.resx">
+      <DependentUpon>201906191933234_Study.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906192003392_Stud.resx">
+      <DependentUpon>201906192003392_Stud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906192010122_Stu.resx">
+      <DependentUpon>201906192010122_Stu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

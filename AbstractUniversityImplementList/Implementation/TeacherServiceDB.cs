@@ -32,6 +32,7 @@ namespace AbstractUniversityImplementList.Implementation
                     }
                     element = context.Teachers.Add(new Teacher
                     {
+                        
                         FirstName = model.FirstName,
                         MiddleName = model.MiddleName,
                         LastName = model.LastName,
@@ -41,22 +42,22 @@ namespace AbstractUniversityImplementList.Implementation
                     });
                     context.SaveChanges();
                     // убираем дубли по компонентам
-                    var groupStudies = model.Studies
-                        .GroupBy(rec => rec.Id)
-                        .Select(rec => new
-                        {
-                            StudyId = rec.Key
-                        });
-                    // добавляем компоненты
-                    foreach (var groupStudy in groupStudies)
-                    {
-                        context.Studies.Add(new Study
-                        {
-                            TeacherId = element.Id,
-                            Id = groupStudy.StudyId
-                        });
-                        context.SaveChanges();
-                    }
+                    //var groupStudies = model.Studies
+                    //    .GroupBy(rec => rec.Id)
+                    //    .Select(rec => new
+                    //    {
+                    //        StudyId = rec.Key
+                    //    });
+                    //// добавляем компоненты
+                    //foreach (var groupStudy in groupStudies)
+                    //{
+                    //    context.Studies.Add(new Study
+                    //    {
+                    //        TeacherId = element.Id,
+                    //        Id = groupStudy.StudyId
+                    //    });
+                    //    context.SaveChanges();
+                    //}
                     transaction.Commit();
                 }
                 catch (Exception)

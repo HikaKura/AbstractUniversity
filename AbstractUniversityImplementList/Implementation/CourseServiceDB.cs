@@ -70,8 +70,8 @@ namespace AbstractUniversityImplementList.Implementation
                     context.Courses.Add(new Course
                     {
                         Name = model.Name,
-                        StartCourse = DateTime.Parse(model.StartCourse),
-                        EndCourse = DateTime.Parse(model.EndCourse),
+                       // StartCourse = DateTime.Parse(model.StartCourse),
+                        //EndCourse = DateTime.Parse(model.EndCourse),
                         Content = model.Content,
                         Student_Count = model.Student_Count,
                         StudyId = model.StudyId
@@ -104,8 +104,8 @@ namespace AbstractUniversityImplementList.Implementation
                         throw new Exception("Элемент не найден");
                     }
                     element.Name = model.Name;
-                    element.StartCourse = DateTime.Parse(model.StartCourse);
-                    element.EndCourse = DateTime.Parse(model.EndCourse);
+                   // element.StartCourse = DateTime.Parse(model.StartCourse);
+                   // element.EndCourse = DateTime.Parse(model.EndCourse);
                     element.Content = model.Content;
                     element.Student_Count = model.Student_Count;
                     element.StudyId = model.StudyId;
@@ -131,7 +131,7 @@ namespace AbstractUniversityImplementList.Implementation
                     if (element != null)
                     {
                         // удаяем записи по курсам при удалении аудитории
-                        context.Courses.RemoveRange(context.Courses.Where(rec => rec.Id == id));
+                        //context.Courses.RemoveRange(context.Courses.Where(rec => rec.Id == id));
                         context.Courses.Remove(element);
                         context.SaveChanges();
                     }
@@ -147,6 +147,11 @@ namespace AbstractUniversityImplementList.Implementation
                     throw;
                 }
             }
+        }
+
+        public void CheckElement(CourseBindingModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
