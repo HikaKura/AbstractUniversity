@@ -40,7 +40,7 @@ namespace AbstractUniversityImplementList.Implementation
                     Id = rep.Id,
                     CourseId = rep.CourseId,
                     ClassroomId = rep.ClassroomId,
-                   // Number = rep.Number
+                    // Number = rep.Number
                 }).ToList(),
                 ClassroomId = rec.ClassroomId
             }).ToList();
@@ -66,31 +66,31 @@ namespace AbstractUniversityImplementList.Implementation
                         Student_Count = model.Student_Count,
                         StudyId = model.StudyId,
                         ClassroomId = model.ClassroomId,
-                        Status = CourseStatus.NotBegin,
+                        Status = CourseStatus.NotBegin
 
                     };
                     context.Courses.Add(element);
                     context.SaveChanges();
                     try
                     {
-                        var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.Id).Select(rec => new
+                        var groupClassrooms = model.ClassroomCourses.GroupBy(rec => rec.ClassroomId).Select(rec => new
                         {
                             ClassroomId = rec.Key,
                             //Number = rec.Key
                         });
-                    
-                    // добавляем компоненты
-                    foreach (var groupClassroom in groupClassrooms)
-                    {
-                        context.ClassroomCourses.Add(new ClassroomCourse
+
+                        // добавляем компоненты
+                        foreach (var groupClassroom in groupClassrooms)
                         {
-                            CourseId = element.Id,
-                            ClassroomId = groupClassroom.ClassroomId,
-                           // Name = element.Name,
-                            //Number = groupClassroom.Number
-                        });
-                        context.SaveChanges();
-                    }
+                            context.ClassroomCourses.Add(new ClassroomCourse
+                            {
+                                CourseId = element.Id,
+                                ClassroomId = groupClassroom.ClassroomId,
+                                // Name = element.Name,
+                                //Number = groupClassroom.Number
+                            });
+                            context.SaveChanges();
+                        }
                     }
                     catch (Exception ex)
                     {

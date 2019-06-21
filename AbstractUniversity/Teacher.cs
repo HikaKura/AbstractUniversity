@@ -27,7 +27,6 @@ namespace AbstractUniversity
         [Required]
         public string Mail { get; set; }
         [DataMember]
-        [Required]
         public string Password { get; set; }
         [DataMember]
         [Required]

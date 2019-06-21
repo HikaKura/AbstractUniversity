@@ -33,12 +33,13 @@
             this.преподавателиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аудиторииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обучениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateCourse = new System.Windows.Forms.Button();
             this.buttonGoingCourse = new System.Windows.Forms.Button();
             this.buttonEndCourse = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.сохранитьБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетПоКурсамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,8 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
-            this.сохранитьБДToolStripMenuItem});
+            this.сохранитьБДToolStripMenuItem,
+            this.отчетПоКурсамToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1015, 24);
@@ -84,6 +86,13 @@
             this.обучениеToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.обучениеToolStripMenuItem.Text = "Обучение";
             this.обучениеToolStripMenuItem.Click += new System.EventHandler(this.обучениеToolStripMenuItem_Click);
+            // 
+            // сохранитьБДToolStripMenuItem
+            // 
+            this.сохранитьБДToolStripMenuItem.Name = "сохранитьБДToolStripMenuItem";
+            this.сохранитьБДToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.сохранитьБДToolStripMenuItem.Text = "Сохранить БД";
+            this.сохранитьБДToolStripMenuItem.Click += new System.EventHandler(this.сохранитьБДToolStripMenuItem_Click);
             // 
             // buttonCreateCourse
             // 
@@ -133,12 +142,12 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // сохранитьБДToolStripMenuItem
+            // отчетПоКурсамToolStripMenuItem
             // 
-            this.сохранитьБДToolStripMenuItem.Name = "сохранитьБДToolStripMenuItem";
-            this.сохранитьБДToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.сохранитьБДToolStripMenuItem.Text = "Сохранить БД";
-            this.сохранитьБДToolStripMenuItem.Click += new System.EventHandler(this.сохранитьБДToolStripMenuItem_Click);
+            this.отчетПоКурсамToolStripMenuItem.Name = "отчетПоКурсамToolStripMenuItem";
+            this.отчетПоКурсамToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.отчетПоКурсамToolStripMenuItem.Text = "Отчет по курсам";
+            this.отчетПоКурсамToolStripMenuItem.Click += new System.EventHandler(this.отчетПоКурсамToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -175,6 +184,7 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ToolStripMenuItem сохранитьБДToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетПоКурсамToolStripMenuItem;
     }
 }
 

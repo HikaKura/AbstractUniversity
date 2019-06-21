@@ -42,13 +42,13 @@ namespace AbstractUniversityView
                     comboBoxStudy.DataSource = listS;
                     comboBoxStudy.SelectedItem = null;
                 }
-                List<ClassroomViewModel> listC = serviceC.GetList();
+               /* List<ClassroomViewModel> listC = serviceC.GetList();
                 if (listC != null) {
                     comboBoxClass.DisplayMember = "Number";
                     comboBoxClass.ValueMember = "Id";
                     comboBoxClass.DataSource = listC;
                     comboBoxClass.SelectedItem = null;
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -83,12 +83,12 @@ namespace AbstractUniversityView
                MessageBoxIcon.Error);
                 return;
             }
-            if (comboBoxClass.SelectedValue == null)
+           /* if (comboBoxClass.SelectedValue == null)
             {
                 MessageBox.Show("Выберите Аудиторию", "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
                 return;
-            }
+            }*/
             try
             {
                 service.NotBeginCourse(new CourseBindingModel
@@ -97,7 +97,7 @@ namespace AbstractUniversityView
                     Content = textBoxContent.Text,
                     Student_Count = Convert.ToInt32(textBoxCount.Text),
                     StudyId = Convert.ToInt32(comboBoxStudy.SelectedValue),
-                    ClassroomId = Convert.ToInt32(comboBoxClass.SelectedValue)
+                   // ClassroomId = Convert.ToInt32(comboBoxClass.SelectedValue)
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);

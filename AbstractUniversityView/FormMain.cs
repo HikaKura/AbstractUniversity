@@ -20,12 +20,14 @@ namespace AbstractUniversityView
         public new IUnityContainer Container { get; set; }
         private readonly IMainService service;
         private readonly IBackUpService serviceB;
+        private readonly IReportService rService;
 
-        public FormMain(IMainService service, IBackUpService serviceB)
+        public FormMain(IMainService service, IBackUpService serviceB, IReportService rService)
         {
             InitializeComponent();
             this.service = service;
             this.serviceB = serviceB;
+            this.rService = rService;
         }
 
         private void LoadData()
@@ -128,7 +130,7 @@ namespace AbstractUniversityView
             try
             {
                 serviceB.BackUpForAdmin();
-                //serviceB.BackUpForClent();
+                serviceB.BackUpForClent();
                 MessageBox.Show("Успешно отправлено на почту", "Успех", MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
             }
@@ -136,6 +138,26 @@ namespace AbstractUniversityView
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
             }
+        }
+
+        private void отчетПоКурсамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var model = (new ReportBindingModel
+                {
+                    Email = "kima.bright@mail.ru",
+                    FileName = @"D:\University\TP\test.pdf",
+                    DateFrom = new DateTime(2018, 1, 1),
+                    DateTo = DateTime.Now
+                });
+                rService.getCourseList(model);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Вы должны быть залогинены!\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            MessageBox.Show("Сохранение и отправка прошли успешно", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -25,9 +25,13 @@ namespace AbstractUniversityImplementList.Implementation
 
         public void BackUpForAdmin()
         {
+            string pathCl = "D:\\University\\TP\\BackupAdmin\\classroomsJSON.json";
+            string pathCC = "D:\\University\\TP\\BackupAdmin\\classroomcoursesJSON.json";
+            string pathCo = "D:\\University\\TP\\BackupAdmin\\coursesJSON.json";
+
             var ms = context.Classrooms.ToList();
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Classroom>));
-            using (FileStream fs = new FileStream("classrooms.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathCl, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, ms);
             }
@@ -35,7 +39,7 @@ namespace AbstractUniversityImplementList.Implementation
             var cc = context.ClassroomCourses.ToList();
             jsonFormatter = new DataContractJsonSerializer(typeof(List<ClassroomCourse>));
 
-            using (FileStream fs = new FileStream("classroomcourses.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathCC, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, cc);
             }
@@ -43,19 +47,23 @@ namespace AbstractUniversityImplementList.Implementation
             var ps = context.Courses.ToList();
             jsonFormatter = new DataContractJsonSerializer(typeof(List<Course>));
 
-            using (FileStream fs = new FileStream("courses.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathCo, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, ps);
             }
 
-            SendEmail(@"kima.bright@mail.ru", "Бекап бд для админа", "", new string[] { "classrooms.json", "classroomcourses.json", "courses.json" });
+            SendEmail(@"kima.bright@mail.ru", "Бекап бд для админа", "", new string[] { pathCl, pathCC, pathCo });
         }
 
         public void BackUpForClent()
         {
+            string pathT = "D:\\University\\TP\\BackupClient\\teachersJSON.json";
+            string pathR = "D:\\University\\TP\\BackupClient\\requestsJSON.json";
+            string pathS = "D:\\University\\TP\\BackupClient\\studiesJSON.json";
+
             var os = context.Teachers.ToList();
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Teacher>));
-            using (FileStream fs = new FileStream("teachers.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathT, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, os);
             }
@@ -63,7 +71,7 @@ namespace AbstractUniversityImplementList.Implementation
             var ops = context.Requests.ToList();
             jsonFormatter = new DataContractJsonSerializer(typeof(List<Request>));
 
-            using (FileStream fs = new FileStream("requests.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathR, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, ops);
             }
@@ -71,12 +79,12 @@ namespace AbstractUniversityImplementList.Implementation
             var ps = context.Studies.ToList();
             jsonFormatter = new DataContractJsonSerializer(typeof(List<Study>));
 
-            using (FileStream fs = new FileStream("studies.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(pathS, FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, ps);
             }
 
-            SendEmail(@"kima.bright@mail.ru", "Бекап бд для клиента", "", new string[] { "teachers.json", "requests.json", "studies.json" });
+            SendEmail(@"kima.bright@mail.ru", "Бекап бд для клиента", "", new string[] { pathT, pathR, pathS });
         }
 
         private void SendEmail(string mailAddress, string subject, string text, string[] attachmentPath)

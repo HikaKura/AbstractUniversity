@@ -106,6 +106,11 @@ namespace AbstractUniversityView
             }*/
             try
             {
+                classroomCourse.Add(new ClassroomCourseViewModel
+                {
+                    ClassroomId = 3,
+                    Number = Convert.ToInt32(textBoxNumber.Text)
+                });
                 List<ClassroomCourseBindingModel> ClassroomCourseBM = new List<ClassroomCourseBindingModel>();
                 for (int i = 0; i < classroomCourse.Count; ++i)
                 {
@@ -113,7 +118,7 @@ namespace AbstractUniversityView
                     {
                         Id = classroomCourse[i].Id,
                         ClassroomId = classroomCourse[i].ClassroomId,
-                       // CourseId = classroomCourse[i].CourseId,
+                        // CourseId = classroomCourse[i].CourseId,
                         Number = classroomCourse[i].Number
                     });
                 }
